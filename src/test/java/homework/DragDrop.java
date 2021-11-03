@@ -15,9 +15,11 @@ public class DragDrop {
     @Test
     void moveAtoB() {
         Configuration.browserSize = "1900x1200";
-        // открыть страничку selenide
+        // открыть страничку
         open("https://the-internet.herokuapp.com/drag_and_drop");
+        // перенести фигуру А на место Б
         $("#column-a").dragAndDropTo($("#column-b"));
+        // узнать что фигура перенеслась
         $("#column-b header").shouldHave(text("A")).click();
 
         sleep(3000);
